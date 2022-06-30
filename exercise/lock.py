@@ -2,6 +2,7 @@ import tkinter as tk
 
 
 def one():
+    # Digit 1
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -9,6 +10,7 @@ def one():
 
 
 def two():
+    # Digit 2
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -16,6 +18,7 @@ def two():
 
 
 def three():
+    # Digit 3
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -23,6 +26,7 @@ def three():
 
 
 def four():
+    # Digit 4
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -30,6 +34,7 @@ def four():
 
 
 def five():
+    # Digit 5
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -37,6 +42,7 @@ def five():
 
 
 def six():
+    # Digit 6
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -44,6 +50,7 @@ def six():
 
 
 def seven():
+    # Digit 7
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -51,6 +58,7 @@ def seven():
 
 
 def eight():
+    # Digit 8
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -58,6 +66,7 @@ def eight():
 
 
 def nine():
+    # Digit 9
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -65,6 +74,7 @@ def nine():
 
 
 def zero():
+    # Digit 0
     if len(lbl_passw["text"]) == 3:
         lbl_passw["text"]
     else:
@@ -72,59 +82,67 @@ def zero():
 
 
 def reset():
+    # Reset
     lbl_passw["text"] = ""
 
 
 def btn1_incre():
+    # Increase by 1 for 1st digit
     if int(lbl1_value["text"]) >= 0 and int(lbl1_value["text"]) < 9:
         lbl1_value["text"] = int(lbl1_value["text"]) + 1
 
 
 def btn2_incre():
+    # Increase by 1 for 2nd digit
     if int(lbl2_value["text"]) >= 0 and int(lbl2_value["text"]) < 9:
         lbl2_value["text"] = int(lbl2_value["text"]) + 1
 
 
 def btn3_incre():
+    # Increase by 1 for 3rd digit
     if int(lbl3_value["text"]) >= 0 and int(lbl3_value["text"]) < 9:
         lbl3_value["text"] = int(lbl3_value["text"]) + 1
 
 
 def btn1_decre():
+    # Decrease by 1 for 1st digit
     if int(lbl1_value["text"]) > 0 and int(lbl1_value["text"]) <= 9:
         lbl1_value["text"] = int(lbl1_value["text"]) - 1
 
 
 def btn2_decre():
+    # Decrease by 1 for 2nd digit
     if int(lbl2_value["text"]) > 0 and int(lbl2_value["text"]) <= 9:
         lbl2_value["text"] = int(lbl2_value["text"]) - 1
 
 
 def btn3_decre():
+    # Decrease by 1 for 3rd digit
     if int(lbl3_value["text"]) > 0 and int(lbl3_value["text"]) <= 9:
         lbl3_value["text"] = int(lbl3_value["text"]) - 1
 
 
 def enter():
+    # Unlock step
     if int(lbl_passw["text"]) == int(str(lbl1_value["text"]) + str(lbl2_value["text"]) + str(lbl3_value["text"])):
-        print("Lock Open")
+        print("Unlocked!!!")
     else:
-        print("Wrong")
+        print("Locked!!!")
 
 
 window = tk.Tk()
 window.title("Smart Lock")
 window.resizable(width=False, height=False)
 
-
+# Numpad inputs + lock check
 frm_numpad = tk.Frame(master=window)
-frm_image = tk.Frame(master=window)
 frm_lock = tk.Frame(master=window)
 
 frm_numpad.grid(row=0, column=0)
-frm_image.grid(row=0, column=1)
-frm_lock.grid(row=0, column=2)
+frm_lock.grid(row=0, column=1)
 
+
+# Frame 1 - Numpad
 lbl_passw = tk.Label(master=frm_numpad, text="", width=12,
                      height=1, fg="#000000", bg="#FFFFFF", relief=tk.FLAT, font="Arial, 14")
 btn_one = tk.Button(master=frm_numpad, text="1", width=3,
@@ -163,6 +181,8 @@ btn_nine.grid(padx=3, pady=3, row=3, column=2)
 btn_reset.grid(padx=3, pady=3, row=3, column=3, rowspan=2)
 btn_zero.grid(padx=3, pady=3, row=4, column=0, columnspan=3)
 
+
+# Frame 2 - Lock
 btn1_up = tk.Button(master=frm_lock, text="\N{UPWARDS BLACK ARROW}", width=5,
                     height=2, fg="#000000", bg="#FFFFFF", relief=tk.RAISED, font="Arial, 14", command=btn1_incre)
 btn2_up = tk.Button(master=frm_lock, text="\N{UPWARDS BLACK ARROW}", width=5,

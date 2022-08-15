@@ -1,5 +1,4 @@
 import tkinter as tk
-from turtle import window_height
 
 # Buttons' command
 def clear():
